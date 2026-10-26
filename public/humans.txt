@@ -1,0 +1,17 @@
+/* TEAM */
+  Author: Hamza Bhulla
+  Role: Full-stack developer
+  Site: https://hamzabhulla.vercel.app
+  GitHub: https://github.com/hamzabhulla
+
+/* THANKS */
+  React, TypeScript, Vite, Tailwind CSS, Dexie.js, dnd-kit,
+  vite-plugin-pwa, zod, Vitest — open source, MIT or compatible
+  licenses. See the repository for the full dependency list.
+
+/* SITE */
+  Last update: 2026-10-26
+  Standards: HTML5, CSS, TypeScript, WCAG AA intent
+  Components: Static landing page, React app at /app, IndexedDB
+  Software: JobPipe — free, no-signup, local-first job tracker
+  Source: https://github.com/hamzabhulla/JobPipe

@@ -1,0 +1,118 @@
+JobPipe — full documentation
+================================
+
+What it is
+----------
+JobPipe is a free, no-signup, local-first job and freelance application
+tracker. It runs entirely in the browser. There is no backend, no
+account system, no paid plan, and no tracking. The source code is MIT
+licensed at https://github.com/hamzabhulla/JobPipe and the author is
+Hamza Bhulla (https://hamzabhulla.vercel.app).
+
+Features
+--------
+- Kanban board with five stages: Saved, Applied, Interview, Offer,
+  Rejected. Drag and drop between stages and within a stage, keyboard
+  reordering, and a status menu on every card. On mobile, one column
+  is shown at a time with swipe or buttons to switch columns.
+- Job form: company, role, link, platform (LinkedIn, Upwork, Fiverr,
+  Email, Other), type (full-time, contract, freelance), rate, location
+  (remote, hybrid, onsite), applied date, follow-up date, notes, tags,
+  and contact name.
+- Proposal templates with placeholders {company}, {role}, {name}, and
+  {skills}. Pick a template and a job, fill in name and skills, and
+  copy the rendered text to the clipboard.
+- Follow-up reminders: overdue and due-today sections at the top of
+  the board, with snooze (+7 days) and done actions, plus an optional
+  browser notification (at most once per day, only with permission).
+- Search, filter by status, platform, and tag, and sort by newest,
+  oldest, company, or follow-up date.
+- Statistics: applications per week (last 8 weeks), response rate,
+  and interview rate, plus counts by stage, drawn as lightweight SVG.
+- JSON export and import: export downloads a versioned JSON file;
+  import validates with zod and asks for confirmation before it
+  replaces all current data.
+- Dark and light themes (system default, saved in localStorage).
+- Keyboard shortcuts: N for a new job, / to focus search, Esc to
+  close dialogs, ? for the shortcuts help dialog.
+- First-run empty state with a "Load sample data" option.
+- Progressive web app: installable, works offline after first load.
+
+Data model
+----------
+Job: id (UUID), company, role, link, platform, type, rate (free text,
+for example "$50/hr"), location, status, appliedAt (YYYY-MM-DD or
+null), followUpAt (YYYY-MM-DD or null), notes, tags (array of
+strings), contactName, order (position within its status column),
+createdAt and updatedAt (epoch milliseconds).
+Template: id, title, body (raw text with placeholders), createdAt,
+updatedAt.
+Settings: a single row (id "settings") with theme, notifications
+enabled, and whether sample data was loaded.
+Storage: IndexedDB via Dexie.js, database name "jobpipe", with
+versioned migrations (v1 initial schema, v2 date and tag indexes,
+v3 updatedAt index). Order within a status column is always dense
+0..n-1 and is maintained inside transactions on create, move, and
+delete.
+
+Privacy
+-------
+JobPipe has no server. Applications, templates, and settings are
+stored only in the user's browser (IndexedDB). No analytics, no
+tracking cookies, and no third-party trackers are used. Export
+downloads a JSON file to the user's device; import reads a file the
+user chose. Clearing browser site data deletes all JobPipe data, so
+regular JSON exports are the backup mechanism.
+
+FAQ
+---
+Is JobPipe really free? Yes. JobPipe is free and open source under
+the MIT license. There is no paid plan, no premium tier, and no
+feature locked behind payment.
+Do I need to sign up to use JobPipe? No. JobPipe has no accounts and
+no sign-up. Open the app and start tracking applications immediately.
+Where is my data stored? Only in your browser, in IndexedDB on your
+own device. JobPipe has no server and no database of its own, so your
+applications are never sent to us or to anyone else.
+Does JobPipe track me? No. JobPipe has no analytics, no tracking
+cookies, and no third-party trackers. The only storage it uses is
+your own browser storage for your applications, templates, and theme
+preference.
+Can I use JobPipe offline? Yes. JobPipe is a progressive web app.
+After the first load, the app works offline because your data and the
+app itself live in your browser.
+What happens if I clear my browser data? Clearing browser data
+deletes your JobPipe applications, because they live only in that
+browser. Export a JSON backup regularly from inside the app, and
+import it to restore your data.
+Can I export my data? Yes. Export your applications and templates as
+a JSON file at any time, and import a previously exported file back
+into JobPipe. Import is validated and asks for confirmation before it
+replaces your current data.
+
+Install (local development)
+---------------------------
+Requirements: Node.js 20 or newer, npm, git.
+  git clone https://github.com/hamzabhulla/JobPipe.git
+  cd JobPipe
+  npm install
+  npm run dev
+Then open http://localhost:5173/app/ (note the trailing slash in dev;
+in production, /app works without it). Run tests with npm test,
+typecheck with npm run typecheck, and build with npm run build
+(output in dist/).
+
+Limitations
+-----------
+- Data lives in one browser only; there is no sync between devices
+  in this version. Optional cloud sync with a private key is on the
+  roadmap, not yet released.
+- Clearing browser data deletes all data; there is no server copy
+  to restore from. JSON export is the backup.
+- JobPipe does not find jobs, apply on your behalf, or integrate
+  with job boards. It tracks applications you add yourself.
+- Notifications require browser permission and only fire while the
+  app is open or the browser can deliver them; the in-app follow-up
+  panel is the reliable fallback.
+- Rate is free text, not a number, so statistics never parse or
+  convert rates.

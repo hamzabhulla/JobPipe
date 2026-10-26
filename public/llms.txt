@@ -1,0 +1,32 @@
+# JobPipe
+
+> JobPipe is a free, no-signup, local-first job and freelance application tracker. It runs entirely in the browser: a Kanban board, proposal templates, follow-up reminders, and statistics, with all data stored only in the user's browser (IndexedDB). No accounts, no server, no analytics.
+
+## Docs
+
+- [JobPipe home](https://jobpipe.vercel.app/): Landing page, features, how it works, privacy summary, and FAQ.
+- [Privacy](https://jobpipe.vercel.app/privacy): What JobPipe stores, what it does not collect, and how export and import work.
+- [About](https://jobpipe.vercel.app/about): Why JobPipe exists, how it works, and what it deliberately does not do.
+- [Changelog](https://jobpipe.vercel.app/changelog): Version history and roadmap items not yet released.
+
+## Features
+
+- [Open the app](https://jobpipe.vercel.app/app): Kanban board with Saved, Applied, Interview, Offer, and Rejected stages.
+- [Open the app](https://jobpipe.vercel.app/app): Proposal templates with {company}, {role}, {name}, and {skills} placeholders.
+- [Open the app](https://jobpipe.vercel.app/app): Follow-up reminders for overdue and due-today applications.
+- [Open the app](https://jobpipe.vercel.app/app): Statistics: applications per week, response rate, and interview rate.
+- [Open the app](https://jobpipe.vercel.app/app): JSON export and import with validation and overwrite confirmation.
+
+## Privacy
+
+- [Privacy](https://jobpipe.vercel.app/privacy): Data lives only in the user's browser; there is no server and no tracking.
+
+## Source code
+
+- [GitHub repository](https://github.com/hamzabhulla/JobPipe): Full source code, MIT licensed.
+- [Full documentation](https://jobpipe.vercel.app/llms-full.txt): Plain-text documentation: features, data model, privacy, FAQ, install, and limitations.
+
+## Author
+
+- [Hamza Bhulla](https://hamzabhulla.vercel.app): Author's portfolio.
+- [Hamza Bhulla on GitHub](https://github.com/hamzabhulla): Author's GitHub profile.
