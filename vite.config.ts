@@ -18,9 +18,8 @@ const rootDir = dirname(fileURLToPath(import.meta.url));
  * and no shared bundle between the two — the app bundle never ships
  * to a landing-page visitor, and the landing page never depends on JS.
  *
- * Step 5 extends `rollupOptions.input` with privacy/about/changelog.
- * Those files do not exist yet in Step 1, so they are intentionally
- * NOT listed here — listing a missing input breaks the build.
+ * Step 5 inputs: landing + app + three static sub-pages, all
+ * plain HTML. No JavaScript bundle is built for the static pages.
  */
 export default defineConfig({
   plugins: [
@@ -77,6 +76,9 @@ export default defineConfig({
       input: {
         main: resolve(rootDir, "index.html"),
         app: resolve(rootDir, "app/index.html"),
+        privacy: resolve(rootDir, "privacy/index.html"),
+        about: resolve(rootDir, "about/index.html"),
+        changelog: resolve(rootDir, "changelog/index.html"),
       },
     },
   },

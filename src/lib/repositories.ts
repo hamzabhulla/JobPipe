@@ -173,6 +173,27 @@ export async function deleteJob(id: string): Promise<void> {
   }
 }
 
+/**
+ * Replace the entire dataset (used by import, after the user
+ * confirms overwrite). One transaction, so a failure leaves the
+ * old data untouched — never clear-then-add in two steps.
+ */
+export async function replaceAll(
+  jobs: Job[],
+  templates: Template[],
+): Promise<void> {
+  try {
+    await db.transaction("rw", db.jobs, db.templates, async () => {
+      await db.jobs.clear();
+      await db.templates.clear();
+      if (jobs.length > 0) await db.jobs.bulkAdd(jobs);
+      if (templates.length > 0) await db.templates.bulkAdd(templates);
+    });
+  } catch (error) {
+    throw toStorageError(error);
+  }
+}
+
 // ------------------------------------------------------------ templates
 
 export async function listTemplates(): Promise<Template[]> {
