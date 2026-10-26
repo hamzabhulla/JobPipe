@@ -1,31 +1,219 @@
 <!doctype html>
-<!--
-  STEP 1 PLACEHOLDER — replaced in full in Step 5 by the static,
-  crawlable landing page (H1, features, how-it-works, privacy, FAQ,
-  comparison, CTA, GitHub link, author section, JSON-LD, OG/Twitter
-  meta, canonical). This stub exists only so the Step 1 multi-page
-  build has a `main` input and `npm run build` passes now.
-  Do NOT ship this stub: Step 5 is the landing page.
--->
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#5449d6" />
-    <title>JobPipe — Free, Local-First Job Application Tracker</title>
-    <meta
-      name="description"
-      content="JobPipe is a free, no-signup, local-first tracker for job and freelance applications. Kanban board, proposal templates and follow-up reminders — your data stays in your browser."
-    />
-  </head>
-  <body>
-    <main>
-      <h1>JobPipe</h1>
-      <p>
-        Free, no-signup, local-first job application tracker. The full
-        landing page arrives in Step 5.
-      </p>
-      <p><a href="/app">Open the app</a></p>
-    </main>
-  </body>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>JobPipe — Free Local-First Job Tracker</title>
+<meta name="description" content="JobPipe is a free, no-signup job application tracker. Kanban board, proposal templates and follow-up reminders, with all data stored only in your browser." />
+<link rel="canonical" href="https://jobpipe.vercel.app/" />
+<meta name="theme-color" content="#5449d6" />
+<meta property="og:title" content="JobPipe — Free Local-First Job Tracker" />
+<meta property="og:description" content="JobPipe is a free, no-signup job application tracker. Kanban board, proposal templates and follow-up reminders, with all data stored only in your browser." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://jobpipe.vercel.app/" />
+<meta property="og:image" content="https://jobpipe.vercel.app/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:site_name" content="JobPipe" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="JobPipe — Free Local-First Job Tracker" />
+<meta name="twitter:description" content="JobPipe is a free, no-signup job application tracker. Kanban board, proposal templates and follow-up reminders, with all data stored only in your browser." />
+<meta name="twitter:image" content="https://jobpipe.vercel.app/og-image.png" />
+<link rel="icon" href="/favicon.ico" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "name": "JobPipe",
+      "url": "https://jobpipe.vercel.app/",
+      "description": "JobPipe is a free, no-signup job application tracker. Kanban board, proposal templates and follow-up reminders, with all data stored only in your browser.",
+      "publisher": {
+        "@type": "Person",
+        "name": "Hamza Bhulla",
+        "url": "https://hamzabhulla.vercel.app",
+        "sameAs": ["https://github.com/hamzabhulla", "https://hamzabhulla.vercel.app"]
+      }
+    },
+    {
+      "@type": "Person",
+      "name": "Hamza Bhulla",
+      "url": "https://hamzabhulla.vercel.app",
+      "sameAs": ["https://github.com/hamzabhulla", "https://hamzabhulla.vercel.app"]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "JobPipe",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Any",
+      "url": "https://jobpipe.vercel.app/",
+      "author": { "@type": "Person", "name": "Hamza Bhulla", "url": "https://hamzabhulla.vercel.app" },
+      "offers": { "@type": "Offer", "price": 0, "priceCurrency": "USD" },
+      "featureList": [
+        "Kanban board for job applications",
+        "Proposal templates with placeholders",
+        "Follow-up reminders",
+        "Application statistics",
+        "JSON export and import",
+        "Dark and light themes",
+        "Offline use as a progressive web app"
+      ],
+      "softwareVersion": "0.1.0",
+      "license": "https://opensource.org/licenses/MIT",
+      "codeRepository": "https://github.com/hamzabhulla/JobPipe"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is JobPipe really free?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. JobPipe is free and open source under the MIT license. There is no paid plan, no premium tier, and no feature locked behind payment." }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need to sign up to use JobPipe?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. JobPipe has no accounts and no sign-up. Open the app and start tracking applications immediately." }
+        },
+        {
+          "@type": "Question",
+          "name": "Where is my data stored?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Only in your browser, in IndexedDB on your own device. JobPipe has no server and no database of its own, so your applications are never sent to us or to anyone else." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does JobPipe track me?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. JobPipe has no analytics, no tracking cookies, and no third-party trackers. The only storage it uses is your own browser storage for your applications, templates, and theme preference." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use JobPipe offline?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. JobPipe is a progressive web app. After the first load, the app works offline because your data and the app itself live in your browser." }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens if I clear my browser data?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Clearing browser data deletes your JobPipe applications, because they live only in that browser. Export a JSON backup regularly from inside the app, and import it to restore your data." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I export my data?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Export your applications and templates as a JSON file at any time, and import a previously exported file back into JobPipe. Import is validated and asks for confirmation before it replaces your current data." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+:root{--accent:#5449d6;--text:#17171c;--muted:#5b5b6b;--border:#e4e3ef;--soft:#f8f7ff}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--text);line-height:1.6}
+a{color:var(--accent)}header,main,footer{max-width:960px;margin:0 auto;padding:0 20px}
+header{display:flex;justify-content:space-between;align-items:center;padding-top:20px;padding-bottom:20px}
+.logo{font-weight:800;font-size:22px;text-decoration:none;color:var(--text)}nav a{margin-left:16px;text-decoration:none}
+.btn{display:inline-block;background:var(--accent);color:#fff!important;padding:12px 22px;border-radius:10px;text-decoration:none;font-weight:600}
+.btn-secondary{background:#fff;color:var(--text)!important;border:1px solid var(--border)}
+.hero{padding:48px 0 32px;text-align:center}.hero h1{font-size:44px;line-height:1.15;margin:0 0 16px}
+.hero p{font-size:19px;color:var(--muted);max-width:640px;margin:0 auto 24px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{border:1px solid var(--border);border-radius:12px;padding:20px;background:#fff}
+.card h3{margin-top:0}section{padding:36px 0}h2{font-size:28px}table{width:100%;border-collapse:collapse}th,td{border:1px solid var(--border);padding:10px;text-align:left}
+.faq details{border:1px solid var(--border);border-radius:10px;padding:14px 18px;margin-bottom:10px}.faq summary{font-weight:600;cursor:pointer}
+.cta{background:var(--soft);border-radius:16px;padding:36px;text-align:center}
+footer{border-top:1px solid var(--border);padding:24px 20px 40px;color:var(--muted);font-size:14px}
+@media(max-width:700px){.grid{grid-template-columns:1fr}.hero h1{font-size:32px}nav a{display:none}nav a:last-child{display:inline-block}}
+</style>
+</head>
+<body>
+<header>
+  <a class="logo" href="/">JobPipe</a>
+  <nav aria-label="Main">
+    <a href="#features">Features</a>
+    <a href="#how-it-works">How it works</a>
+    <a href="#privacy">Privacy</a>
+    <a href="#faq">FAQ</a>
+    <a href="https://github.com/hamzabhulla/JobPipe">GitHub</a>
+    <a class="btn" href="/app">Open the app</a>
+  </nav>
+</header>
+<main>
+  <section class="hero">
+    <h1>Track every job application in one place</h1>
+    <p>JobPipe is a free, no-signup, local-first tracker for job seekers and freelancers. One clean board for every application, proposal, and follow-up — with nothing stored on a server.</p>
+    <p><a class="btn" href="/app">Open the app — free, no sign-up</a></p>
+    <p><small>Works in your browser. Your data stays on your device.</small></p>
+  </section>
+
+  <section id="features" aria-labelledby="features-heading">
+    <h2 id="features-heading">Features</h2>
+    <div class="grid">
+      <article class="card"><h3>Kanban board</h3><p>Five stages: Saved, Applied, Interview, Offer, Rejected. Drag cards between stages, reorder within a stage, and move cards by keyboard or status menu.</p></article>
+      <article class="card"><h3>Proposal templates</h3><p>Save reusable proposals with placeholders for company, role, name, and skills. Fill one from any job and copy it to your clipboard.</p></article>
+      <article class="card"><h3>Follow-up reminders</h3><p>Set a follow-up date on any application. Overdue and due-today follow-ups appear at the top of the board, with an optional browser notification.</p></article>
+      <article class="card"><h3>Statistics</h3><p>See applications per week, response rate, and interview rate, plus counts by stage — drawn as lightweight charts with no chart library.</p></article>
+      <article class="card"><h3>Export and import</h3><p>Back up everything as JSON and restore it later. Imports are validated and ask for confirmation before replacing your data.</p></article>
+      <article class="card"><h3>Offline, installable</h3><p>JobPipe is a progressive web app. After the first load it works offline, and you can install it on your phone or computer.</p></article>
+    </div>
+  </section>
+
+  <section id="how-it-works" aria-labelledby="how-heading">
+    <h2 id="how-heading">How it works</h2>
+    <ol>
+      <li><strong>Open the app.</strong> No account, no sign-up, no install required to start.</li>
+      <li><strong>Add an application.</strong> Company, role, platform, rate, location, dates, tags, and contact — as much or as little as you have.</li>
+      <li><strong>Move it along.</strong> Drag it from Saved to Applied to Interview to Offer, set a follow-up, and reuse a proposal template for the next one.</li>
+    </ol>
+  </section>
+
+  <section id="privacy" aria-labelledby="privacy-heading">
+    <h2 id="privacy-heading">Privacy, by design</h2>
+    <p>JobPipe has no backend. Your applications, templates, and settings are stored only in your browser's IndexedDB, on your own device. There is no account to create, no server that receives your data, no analytics, and no tracking. If you want a backup, you export a JSON file yourself — nobody else gets a copy. Read the full <a href="/privacy">privacy page</a>.</p>
+  </section>
+
+  <section aria-labelledby="compare-heading">
+    <h2 id="compare-heading">JobPipe compared</h2>
+    <table>
+      <thead><tr><th></th><th>JobPipe</th><th>Spreadsheet</th><th>Paid tracker</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Cost</th><td>Free, open source</td><td>Free, but manual</td><td>Usually paid</td></tr>
+        <tr><th scope="row">Account required</th><td>No</td><td>Often yes</td><td>Yes</td></tr>
+        <tr><th scope="row">Data location</th><td>Your browser only</td><td>Cloud spreadsheet</td><td>Vendor server</td></tr>
+        <tr><th scope="row">Kanban board</th><td>Yes</td><td>No, unless built</td><td>Yes</td></tr>
+        <tr><th scope="row">Follow-up reminders</th><td>Yes</td><td>No</td><td>Yes</td></tr>
+        <tr><th scope="row">Works offline</th><td>Yes</td><td>Usually no</td><td>Usually no</td></tr>
+      </tbody>
+    </table>
+    <p><small>Comparison is about product shape, not a claim that other products are bad — a spreadsheet is a fine tracker if you prefer it.</small></p>
+  </section>
+
+  <section id="faq" class="faq" aria-labelledby="faq-heading">
+    <h2 id="faq-heading">Frequently asked questions</h2>
+    <details><summary>Is JobPipe really free?</summary><p>Yes. JobPipe is free and open source under the MIT license. There is no paid plan, no premium tier, and no feature locked behind payment.</p></details>
+    <details><summary>Do I need to sign up to use JobPipe?</summary><p>No. JobPipe has no accounts and no sign-up. Open the app and start tracking applications immediately.</p></details>
+    <details><summary>Where is my data stored?</summary><p>Only in your browser, in IndexedDB on your own device. JobPipe has no server and no database of its own, so your applications are never sent to us or to anyone else.</p></details>
+    <details><summary>Does JobPipe track me?</summary><p>No. JobPipe has no analytics, no tracking cookies, and no third-party trackers. The only storage it uses is your own browser storage for your applications, templates, and theme preference.</p></details>
+    <details><summary>Can I use JobPipe offline?</summary><p>Yes. JobPipe is a progressive web app. After the first load, the app works offline because your data and the app itself live in your browser.</p></details>
+    <details><summary>What happens if I clear my browser data?</summary><p>Clearing browser data deletes your JobPipe applications, because they live only in that browser. Export a JSON backup regularly from inside the app, and import it to restore your data.</p></details>
+    <details><summary>Can I export my data?</summary><p>Yes. Export your applications and templates as a JSON file at any time, and import a previously exported file back into JobPipe. Import is validated and asks for confirmation before it replaces your current data.</p></details>
+  </section>
+
+  <section class="cta" aria-labelledby="cta-heading">
+    <h2 id="cta-heading">Start tracking, in under a minute</h2>
+    <p>No sign-up. No server. Just your applications, in order.</p>
+    <p><a class="btn" href="/app">Open JobPipe</a> <a class="btn btn-secondary" href="https://github.com/hamzabhulla/JobPipe">View source on GitHub</a></p>
+  </section>
+
+  <section aria-labelledby="author-heading">
+    <h2 id="author-heading">About the author</h2>
+    <p>JobPipe is built by <strong>Hamza Bhulla</strong>, a full-stack developer and freelancer. Source code: <a href="https://github.com/hamzabhulla/JobPipe">github.com/hamzabhulla/JobPipe</a>. Portfolio: <a href="https://hamzabhulla.vercel.app">hamzabhulla.vercel.app</a>. Read more on the <a href="/about">about page</a>.</p>
+  </section>
+</main>
+<footer>
+  <p>JobPipe — free, open source, local-first. <a href="/privacy">Privacy</a> · <a href="/about">About</a> · <a href="/changelog">Changelog</a> · <a href="https://github.com/hamzabhulla/JobPipe">GitHub</a></p>
+  <p>Built by Hamza Bhulla. MIT License.</p>
+</footer>
+</body>
 </html>

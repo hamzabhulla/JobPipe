@@ -4,8 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- App routes are NEVER indexed: the app is a private, per-user
-         dashboard with no public content. This meta is permanent and
-         is also enforced by robots.txt in Step 5 (Disallow: /app). -->
+         dashboard with no public content. This meta is the enforcement.
+         robots.txt intentionally does NOT Disallow /app: a Disallow
+         would stop crawlers from ever reading this noindex tag, which
+         can leave the URL listed without a snippet. Allowing the crawl
+         lets the noindex be honoured. See public/robots.txt. -->
     <meta name="robots" content="noindex, nofollow" />
     <meta name="theme-color" content="#5449d6" />
     <title>JobPipe — Your Applications</title>
