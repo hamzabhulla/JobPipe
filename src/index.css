@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/**
+ * Design tokens (Step 1). Tailwind utilities carry layout/spacing;
+ * these variables carry brand + surface semantics so the dark theme
+ * (Step 4) flips by changing variables, not by rewriting components.
+ * Keep new colours out of components — add them here first.
+ */
+:root {
+  --jp-accent: #5449d6;
+  --jp-accent-hover: #4636b8;
+  --jp-surface: #ffffff;
+  --jp-surface-soft: #f8f7ff;
+  --jp-text: #17171c;
+  --jp-text-muted: #5b5b6b;
+  --jp-border: #e4e3ef;
+  --jp-focus-ring: rgb(84 73 214 / 0.35);
+}
+
+.dark {
+  --jp-surface: #16161d;
+  --jp-surface-soft: #1e1e2a;
+  --jp-text: #f4f4f7;
+  --jp-text-muted: #a7a7b8;
+  --jp-border: #2c2c3a;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--jp-surface);
+  color: var(--jp-text);
+  font-family:
+    Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Visible, consistent keyboard focus — required for the
+ * keyboard-accessible Kanban in Step 2. Never remove this. */
+:focus-visible {
+  outline: 2px solid var(--jp-accent);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px var(--jp-focus-ring);
+}
+
+::selection {
+  background: rgb(84 73 214 / 0.22);
+}
